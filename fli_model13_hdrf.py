@@ -54,11 +54,11 @@ edge_num = []
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print("device:", device)
 
-# # dataset = dgl.data.AsNodePredDataset(DglNodePropPredDataset("ogbn-arxiv", root="/22085400417/dataset4/arxiv"))
+# # dataset = dgl.data.AsNodePredDataset(DglNodePropPredDataset("ogbn-arxiv", root="./dataset4/arxiv"))
 # # graph = dataset[0]
-# dataset = dgl.data.AsNodePredDataset(DglNodePropPredDataset("ogbn-products", root="/22085400417/22414/obgdata"))
+# dataset = dgl.data.AsNodePredDataset(DglNodePropPredDataset("ogbn-products", root="./obgdata"))
 # graph = dataset[0]
-dataset = dgl.data.FlickrDataset(raw_dir='/22085400417/dataset4/FlickrDataset')
+dataset = dgl.data.FlickrDataset(raw_dir='./FlickrDataset')
 graph = dataset[0]
 ##graph = dgl.remove_self_loop(graph)  
 ###graph = dgl.add_self_loop(graph)
@@ -99,7 +99,7 @@ dataloader = dgl.dataloading.DataLoader(
     util.Sampler.Edge_partition_sampler_id(
         graph,
         num_partitions, 
-        cache_path=f'/22085400417/22414/415/ama_coa_fen/compare/experience/fli_huafen_su/fli_hdrf10_idlist',
+        cache_path=f'./fli_hdrf10_idlist',
         prefetch_ndata=["feat", "label", "train_mask", "val_mask", "test_mask"],
     ),
     device="cuda",
@@ -116,7 +116,7 @@ eval_dataloader = dgl.dataloading.DataLoader(
     util.Sampler.Edge_partition_sampler_id(
         graph,
         num_partitions,  
-        cache_path=f'/22085400417/22414/415/ama_coa_fen/compare/experience/fli_huafen_su/fli_hdrf10_idlist',
+        cache_path=f'./fli_hdrf10_idlist',
         prefetch_ndata=["feat", "label", "train_mask", "val_mask", "test_mask"],
         ###"train_mask", "val_mask", "test_mask"
     ),
