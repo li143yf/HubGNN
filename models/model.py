@@ -58,7 +58,6 @@ class HubGNN(nn.Module):
         self.shared_memory_attention = args.shared_memory_attention
         self.use_topk = args.use_topk
         self.topk = args.topk
-        # self.gw_ratio = args.gw_ratio
         self.init_memory = args.init_memory
 
     def forward(self, sg, x, plot=None):
@@ -66,15 +65,15 @@ class HubGNN(nn.Module):
         # x = x.flatten(1)  # Flatten the heads    ###################  GAT
         x = x.relu()
         x = F.dropout(x, p=0.2, training=self.training)
-        x_gw = x.unsqueeze(1)
+        x_gm = x.unsqueeze(1)
         if self.memory_layer1.self_attn.memory is not None:
             self.memory_layer1.self_attn.memory = self.memory_layer1.self_attn.memory.detach()
         if self.init_memory:
-            self.memory_layer1.self_attn.init_memory(x_gw.size(1), device=x.device)
-        x_gw, memory = self.memory_layer1(x_gw, None, memory=self.memory_layer1.self_attn.memory, plot=plot)
-        x_gw = x_gw.squeeze(1)
+            self.memory_layer1.self_attn.init_memory(x_gm.size(1), device=x.device)
+        x_gm, memory = self.memory_layer1(x_gm, None, memory=self.memory_layer1.self_attn.memory, plot=plot)
+        x_gm = x_gm.squeeze(1)
         x = self.layer_norm(x)
-        x = torch.cat((x, x_gw), dim=1)
+        x = torch.cat((x, x_gm), dim=1)
         x = self.conv2(sg, x)
         # x = x.mean(1)  # Average over heads for final prediction    ################   GAT
         return F.log_softmax(x, dim=-1)
