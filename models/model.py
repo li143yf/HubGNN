@@ -7,7 +7,6 @@ from torch_geometric.nn import GCNConv, SAGEConv
 from torch.nn import ModuleList
 import dgl
 from lib.transformer_utilities.transformer_layer import TransformerEncoderLayerVanilla
-# from lib.transformer_utilities.pos_enc import PositionEncoder
 from lib.transformer_utilities.GroupLinearLayer import GroupLinearLayer
 import math
 
