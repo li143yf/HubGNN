@@ -8,7 +8,7 @@ HubGNN is a novel framework designed to address the challenges of training GNNs 
 
 
 ### Experimental environment 
-All the experiments are conducted on a machine with NVIDIA GeForce RTX 3090GPU (24GB GPU memory). Intel Xeon Silver 4214R CPU(12 cores, 2.40GHz), and 256GB of RAM.
+All the experiments are conducted on a machine with NVIDIA GeForce RTX 3090GPU (24GB GPU memory), Intel Xeon Silver 4214R CPU(12 cores, 2.40GHz), and 256GB of RAM.
 
 
 ### Requirements
