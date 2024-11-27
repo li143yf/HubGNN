@@ -83,11 +83,4 @@ class HubGNN(nn.Module):
 
                 
 
-# if __name__ == "__main__":
-     
-#     model = HubGNN(1433, 32).to("cuda:0")
-#     from dgl.data import citation_graph
-#     from dgl import add_self_loop
-#     graph_with_features = add_self_loop(citation_graph.load_cora()[0]).to("cuda:0")
-#     node_features = graph_with_features.ndata['feat'].float().cuda()
-#     model(graph_with_features, node_features)
+
