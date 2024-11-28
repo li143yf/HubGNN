@@ -35,7 +35,7 @@ torch_geometric    2.1.0
 ```
 ### Datasets
 
-Computer, Physics, Flickr and Reddit are obtained from the Deep Graph Librar ([DGL](https://www.dgl.ai/)). The ogbn-arxiv and ogbn-products datasets are obtained from the Open Graph Benchmark ([OGB](https://ogb.stanford.edu/)).
+Computer, Physics, Flickr and Reddit are obtained from the Deep Graph Library ([DGL](https://www.dgl.ai/)). The ogbn-arxiv and ogbn-products datasets are obtained from the Open Graph Benchmark ([OGB](https://ogb.stanford.edu/)).
 
 ### Parameter settings 
 
