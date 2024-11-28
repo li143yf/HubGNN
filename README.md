@@ -7,9 +7,16 @@ The code corresponds to article "HubGNN: Global Hub-Driven GNN with Theoreticall
 HubGNN is a novel framework designed to address the challenges of training GNNs on large-scale graphs by combining edge partitioning with global information sharing. While edge partitioning retains the full graph structure, it introduces challenges such as determining its impact on local learning accuracy and addressing the information loss caused by cut nodes across subgraphs. HubGNN tackles these issues by first identifying HDRF as the optimal edge partitioning algorithm through theoretical and experimental analysis. Additionally, it introduces a global hub module to learn and share global graph information, mitigating the limitations of cut nodes. Experiments on six datasets show that HubGNN outperforms baseline methods, achieving up to 7.2% accuracy improvement, demonstrating its effectiveness in optimizing both partitioning and information sharing.
 
 <p align="center">
-  <img width="600" src="HubGNN.pdf">  
+
+<img width="600" src="HubGNN.png" alt="HubGNN 示例图">
+
 </p>
 
+<p align="center">
+
+Fig.1：HubGNN Model: (a) The global graph is partitioned into subgraphs using HDRF. (b) GNNs are trained on subgraphs with the Global Hub module. (c) The Global Hub learns the cut nodes information and shares the global information.
+
+</p>
 
 ### Experimental environment 
 All the experiments are conducted on a machine with NVIDIA GeForce RTX 3090GPU (24GB GPU memory), Intel Xeon Silver 4214R CPU(12 cores, 2.40GHz), and 256GB of RAM.
