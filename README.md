@@ -43,7 +43,7 @@ The GNNs on all datasets are 2 layers and 128 hidden units. The dropout rate is 
 
 ### Examples
 <p align="justify">
-The following commands learn a neural network and score on the test set. </p>
+The following commands learn a neural network on the ogbn-arxiv dataset and score on the test set. </p>
 
 ```sh
 $ python HubGNN/train_HubGNN.py
