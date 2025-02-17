@@ -8,7 +8,7 @@ HubGNN is a novel framework designed to address the challenges of training GNNs 
 
 <p align="center">
 
-<img width="600" src="HubGNN.png" alt="HubGNN 示例图">
+<img width="600" src="HubGNN.png" alt="HubGNN">
 
 </p>
 
